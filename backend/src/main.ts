@@ -3,6 +3,13 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 3000, '0.0.0.0');
+  
+  // This explicitly allows your React frontend to make HTTP requests to this backend
+  app.enableCors({
+    origin: '*',
+  });
+
+  // Keep the 0.0.0.0 binding so Docker maps the port correctly
+  await app.listen(3000, '0.0.0.0');
 }
 bootstrap();
