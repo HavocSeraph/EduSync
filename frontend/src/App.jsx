@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import GamificationEngine from './components/GamificationEngine';
+import Flashcards from './components/Flashcards';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/live" element={<GamificationEngine />} />
         <Route path="/notes" element={<PlaceholderPage icon="📒" title="Module Notes" subtitle="Consolidated lecture notes organized by module." color="amber" />} />
-        <Route path="/flashcards" element={<PlaceholderPage icon="🃏" title="Flashcards" subtitle="Spaced-repetition flashcards for key concepts." color="purple" />} />
+        <Route path="/flashcards" element={<Flashcards />} />
         <Route path="/pyqs" element={<PlaceholderPage icon="📝" title="Previous Year Questions" subtitle="Past examination questions with model answers." color="green" />} />
       </Routes>
     </BrowserRouter>
